@@ -1,6 +1,5 @@
 <template>
-    <p class="text-orange-500 text-2xl font-bold uppercase tracking-widest">
-        <i class="fa-solid fa-lemon"></i>
+    <p class="text-orange-500 text-2xl uppercase tracking-widest">
         Frica.
     </p>
 </template>
@@ -9,6 +8,7 @@
 
 p {
     font-family: 'Nunito', sans-serif;
+    font-weight: 700;
 }
 
 </style>

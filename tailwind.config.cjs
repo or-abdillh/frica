@@ -4,7 +4,11 @@ module.exports = {
     './src/**/*.{vue,js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "landscape-nature": "url('/img/landscape-nature.png')"
+      }
+    },
   },
   plugins: [],
   darkMode: 'class'

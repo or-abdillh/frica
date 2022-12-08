@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "target": "es6",
     "paths": {
+        "/": ["./public/*"],
         "@/*": ["./src/*"],
         "@component/*": ["./src/components/*"],
         "@page/*": ["./src/pages/*"],
