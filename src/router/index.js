@@ -4,6 +4,9 @@ const routes = [
     {
         name: 'Home',
         path: '/',
+        meta: {
+            title: 'Explore'
+        },
         component: () => import('@page/index.vue')
     }
 ]

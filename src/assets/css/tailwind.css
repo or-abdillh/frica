@@ -12,10 +12,22 @@
 @layer utilities {
 
     .container {
-        @apply p-3 md:p-5 box-border w-full;
+        @apply p-5 md:p-8 box-border w-full;
     }
 
+    .no-ruler::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+@layer components {
+    
     .btn {
         @apply inline-block px-3 py-2 rounded-lg active:ring-2 ring-offset-2 hover:scale-95 duration-300 cursor-pointer;
+    }
+    
+    .section-title {
+        @apply text-xl font-semibold text-orange-600;
     }
 }

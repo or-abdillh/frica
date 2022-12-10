@@ -11,7 +11,6 @@
 
 import { onMounted, ref } from 'vue'
 
-
 const getLocalStorage = () => {
 	return Boolean( parseInt( localStorage.getItem('frica:dark-mode') ) | 0 )
 }
@@ -33,7 +32,7 @@ const togglerHandler = () => {
 const isDarkToggle = ref(getLocalStorage())
 
 onMounted(() => {
-	if ( getLocalStorage() ) htmlToggler()
+	if ( getLocalStorage() ) document.querySelector('html').classList.add('dark')
 })
 
 </script>
