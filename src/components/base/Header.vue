@@ -3,7 +3,7 @@
         <Frica class="md:hidden"></Frica>
         <ul class="flex justify-end items-center gap-2 text-xl">
             <li>
-                <button title="Notification"><i class="text-orange-600 fa-solid fa-bell"></i></button>
+                <button title="Notification"><i class="text-viva-magenta fa-solid fa-bell"></i></button>
             </li>
             <li class="md:hidden">
                 <DarkModeToggler></DarkModeToggler>

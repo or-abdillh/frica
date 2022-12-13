@@ -32,45 +32,65 @@
             </section>
             <!-- categories wrapper -->
             <section class="flex flex-wrap justify-between md:flex-nowrap gap-3 overflow-x-scroll no-ruler pr-4 pl-1 py-4">
-                <template v-for="category in categories" key="category.id">
-                    <button @click="categoryActive = category.id" 
-                        :class="categoryActive == category.id ? 'bg-viva-magenta text-gray-100' : 'bg-gray-200 dark:bg-slate-700 text-gray-500 dark:text-gray-400'" 
+                <template v-for="item in categories" :key="item.id">
+                    <button @click="category = item.title" 
+                        :class="category == item.title ? 'bg-viva-magenta text-gray-100' : 'bg-gray-200 dark:bg-slate-700 text-gray-500 dark:text-gray-400'" 
                         class="w-[48%] md:w-3/12 hover:ring ring-gray-300 dark:ring-slate-500 duration-300 flex justify-start gap-4 md:gap-6 items-center py-4 px-8 rounded-full border border-gray-300">
                         <i class="fa-solid fa-map"></i>
-                        {{ category.name }}
+                        {{ item.title }}
                     </button>
                 </template>
             </section>
         </section>
         <!-- search bar -->
         <section class="mb-6">
-            <p class="text-2xl md:text-3xl text-gray-900 dark:text-gray-100 mb-4">
+            <p class="font-medium text-2xl md:text-3xl text-viva-magenta dark:text-gray-100 mb-4">
                 Find your dream vacation
             </p>
-            <section class="w-full rounded-full overflow-hidden flex border border-gray-300">
-                <input class="w-10/12 md:w-11/12 p-4 bg-gray-50 dark:bg-slate-700 outline-viva-magenta rounded-l-full" placeholder="Type your place" type="search">
+            <!-- search bar -->
+            <section class="w-full mb-6 rounded-full overflow-hidden flex border border-gray-300">
+                <input v-model="keyword" class="w-10/12 md:w-11/12 p-4 bg-gray-50 dark:bg-slate-700 outline-viva-magenta rounded-l-full" placeholder="Type your place" type="search">
                 <button class="w-2/12 md:w-1/12 bg-viva-magenta text-gray-100"><i class="fa-solid fa-search"></i></button>
             </section>
+            <!-- end of search bar -->
+            <!-- vacation list cards -->
+            <section class="w-full flex flex-wrap justify-between gap-4">
+                <template v-if="vacations.length > 0" v-for="vacation in vacations" :key="vacation">
+                    <VacationListCard :title="vacation.title" :location="vacation.location"></VacationListCard>
+                </template>
+                <section v-else class="w-full grid place-content-center text-center p-8">
+                    <h1 class="text-lg">Sorry, we cannot find what do you want</h1>
+                    <small>please try with another keyword again</small>
+                </section>
+            </section>
+            <!-- end of vacation list cards -->
         </section>
     </main>
 </template>
 
 <script setup>
 
-import { ref } from 'vue'
-
+import { ref, computed } from 'vue'
+import { useVacation } from '@/stores/vacation'
 import PopularCard from '@component/base/PopularCard.vue'
+import VacationListCard from '@component/base/VacationListCard.vue'
 import Header from '@component/base/Header.vue'
 
-const categories = [
-    { name: 'All', id: 1 },
-    { name: 'Beach', id: 2 },
-    { name: 'Lake', id: 3 },
-    { name: 'Mountain', id: 4 },
-    { name: 'Garden', id: 5 },
-    { name: 'Historical', id: 6 },
-]
+// init store
+const vacation = useVacation()
 
-const categoryActive = ref(1)
+const keyword = ref('')
+const category = ref('All')
+const vacations = computed(() => vacation.filter(keyword.value, category.value))
+
+const categories = [
+    { title: 'All', id: 1 },
+    { title: 'Beach', id: 2 },
+    { title: 'River', id: 3 },
+    { title: 'Mountain', id: 4 },
+    { title: 'Garden', id: 5 },
+    { title: 'Historical', id: 6 },
+    { title: 'Island', id: 7 },
+]
 
 </script>
