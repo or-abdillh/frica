@@ -1,6 +1,6 @@
 <template>
     <!-- card wrapper -->
-    <section class="md:w-[47%] cursor-pointer active:ring-viva-magenta hover:ring-4 ring-gray-200 ring-offset-4 duration-300 flex justify-between gap-5 bg-white rounded-xl overflow-hidden p-4 border border-gray-300">
+    <section class="md:w-[47%] cursor-pointer active:ring-viva-magenta hover:ring-4 ring-gray-200 dark:ring-slate-500 ring-offset-4 duration-300 flex justify-between gap-5 bg-white dark:bg-slate-700 rounded-xl overflow-hidden p-4 border border-gray-300">
         <section class="flex items-start gap-5">
             <!-- image -->
             <section class="w-2/12 place-self-center">
@@ -13,7 +13,7 @@
                 <!-- Location -->
                 <span class="flex items-center gap-2 text-sm">
                     <i class="fa-solid fa-location-dot text-viva-magenta"></i>
-                    <p class="text-gray-600">{{ props.location }}</p>
+                    <p class="text-gray-600 dark:text-gray-200">{{ props.location }}</p>
                 </span>
             </section>
         </section>
