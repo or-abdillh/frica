@@ -1,5 +1,5 @@
 <template>
-    <p class="text-orange-500 text-2xl uppercase tracking-widest">
+    <p class="text-viva-magenta text-2xl uppercase tracking-widest">
         Frica.
     </p>
 </template>

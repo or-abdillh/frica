@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         "landscape-nature": "url('/img/landscape-nature.png')"
+      },
+      colors: {
+        "viva-magenta": "#BB2649"
       }
     },
   },

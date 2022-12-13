@@ -12,17 +12,17 @@
                 <!-- name -->
                 <section class="mb-3">
                     <small class="text-gray-600 dark:text-gray-400">Name</small>
-                    <p class="text-orange-700 dark:text-orange-600 font-medium">Johnathan Doe</p>
+                    <p class="text-viva-magenta font-medium">Johnathan Doe</p>
                 </section>
                 <!-- gender -->
                 <section class="mb-3">
                     <small class="text-gray-600 dark:text-gray-400">Gender</small>
-                    <p class="text-orange-700 dark:text-orange-600 font-medium">Male</p>
+                    <p class="text-viva-magenta font-medium">Male</p>
                 </section>
                 <!-- joined at -->
                 <section class="mb-3">
                     <small class="text-gray-600 dark:text-gray-400">Joined</small>
-                    <p class="text-orange-700 dark:text-orange-600 font-medium">Since 21 Aug 2022</p>
+                    <p class="text-viva-magenta font-medium">Since 21 Aug 2022</p>
                 </section>
             </section>
         </section>

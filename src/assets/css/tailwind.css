@@ -28,6 +28,6 @@
     }
     
     .section-title {
-        @apply text-xl font-semibold text-orange-600;
+        @apply text-xl font-semibold text-viva-magenta;
     }
 }
