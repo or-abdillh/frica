@@ -56,7 +56,7 @@
             <!-- vacation list cards -->
             <section class="w-full flex flex-wrap justify-between gap-4">
                 <template v-if="vacations.length > 0" v-for="vacation in vacations" :key="vacation">
-                    <VacationListCard :title="vacation.title" :location="vacation.location"></VacationListCard>
+                    <VacationListCard :title="vacation.title" :location="vacation.location" :slug="Vacation.getSlug( vacation.id )"></VacationListCard>
                 </template>
                 <section v-else class="w-full grid place-content-center text-center p-8">
                     <h1 class="text-lg">Sorry, we cannot find what do you want</h1>
@@ -77,11 +77,11 @@ import VacationListCard from '@component/base/VacationListCard.vue'
 import Header from '@component/base/Header.vue'
 
 // init store
-const vacation = useVacation()
+const Vacation = useVacation()
 
 const keyword = ref('')
 const category = ref('All')
-const vacations = computed(() => vacation.filter(keyword.value, category.value))
+const vacations = computed(() => Vacation.filter(keyword.value, category.value))
 
 const categories = [
     { title: 'All', id: 1 },

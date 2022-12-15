@@ -10,6 +10,11 @@ const actions = {
             )
         if ( category !== 'All' ) results = results.filter( result => result.category === category )
         return results
+    },
+
+    getSlug(id) {
+        return this.vacations
+            .filter( vacation => vacation.id === id )[0].title.toLowerCase().split(' ').join('-')
     }
 }
 

@@ -8,6 +8,11 @@ const routes = [
             title: 'Explore'
         },
         component: () => import('@page/index.vue')
+    },
+    {
+        name: 'Vacation',
+        path: '/vacation/:slug',
+        component: () => import('@page/vacation/index.vue')
     }
 ]
 

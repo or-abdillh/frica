@@ -1,6 +1,7 @@
 <template>
     <!-- card wrapper -->
-    <section class="md:w-[47%] cursor-pointer active:ring-viva-magenta hover:ring-4 ring-gray-200 dark:ring-slate-500 ring-offset-4 duration-300 flex justify-between gap-5 bg-white dark:bg-slate-700 rounded-xl overflow-hidden p-4 border border-gray-300">
+    <section @click="$router.push({ name: 'Vacation', params: { slug: props.slug } })" 
+        class="md:w-[47%] cursor-pointer active:ring-viva-magenta hover:ring-4 ring-gray-200 dark:ring-slate-500 ring-offset-4 duration-300 flex justify-between gap-5 bg-white dark:bg-slate-700 rounded-xl overflow-hidden p-4 border border-gray-300">
         <section class="flex items-start gap-5">
             <!-- image -->
             <section class="w-2/12 place-self-center">
@@ -34,6 +35,10 @@ const props = defineProps({
     location: {
         type: String,
         default: 'Pelaihari'
+    },
+    slug: {
+        type: String,
+        required: true
     }
 })
 
