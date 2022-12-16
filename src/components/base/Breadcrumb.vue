@@ -4,7 +4,7 @@
             <li class="text-gray-700">
                 <router-link to="/">
                     <i class="fa-solid fa-home mr-1"></i>
-                    Let's to explore
+                    <span class="hidden md:inline">Let's to explore</span>
                 </router-link>
                 <i class="fa-solid fa-chevron-right text-xs ml-2"></i>
             </li>

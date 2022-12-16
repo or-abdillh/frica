@@ -9,7 +9,7 @@
                 </h1>
             </section>
             <!-- profile, notification, and etc -->
-            <Header></Header>
+            <Header class="hidden md:block"></Header>
         </section>
         <!-- popular place -->
         <section class="mb-6">
