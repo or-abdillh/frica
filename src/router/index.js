@@ -12,7 +12,26 @@ const routes = [
     {
         name: 'Vacation',
         path: '/vacation/:slug',
+        meta: {
+            title: 'Explore'
+        },
         component: () => import('@page/vacation/index.vue')
+    },
+    {
+        name: 'Channel',
+        path: '/channel',
+        meta: {
+            title: 'Channel'
+        },
+        component: () => import('@page/channel/index.vue')
+    },
+    {
+        name: 'ChannelDetail',
+        path: '/channel/detail/:slug',
+        meta: {
+            title: 'Channel'
+        },
+        component: () => import('@page/channel/detail/index.vue')
     }
 ]
 

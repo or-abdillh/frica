@@ -1,3 +1,5 @@
+import Slug from '@/helpers/Slug.js'
+
 const actions = {
     all() {
         return this.vacations 
@@ -12,25 +14,11 @@ const actions = {
         return results
     },
 
-    generateSlug(string = 'Vacation Title') {
-        return string.toLowerCase().split(' ').join('-')
-    },
-
     getSlug(id) {
-        return this.generateSlug(
+        return Slug.generate(
             this.vacations.filter( vacation => vacation.id === id )[0].title
         )
     },
-
-    extractSlug(slug) {
-        return slug.split('-')
-            .map( words => {
-                let wordSplit = words.split('')
-                wordSplit[0] = wordSplit[0].toUpperCase()
-                return wordSplit.join('')
-            })
-            .join(' ')
-    }
 }
 
 export default actions
